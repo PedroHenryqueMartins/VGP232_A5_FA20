@@ -45,6 +45,7 @@ namespace Assignment5
             Health -= damage;
             if (Health <= 0)
             {
+                Health = 0;
                 IsAlive = false;
             }
         }
