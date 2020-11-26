@@ -43,6 +43,10 @@ namespace Assignment5
         public void TakeDamage(int damage)
         {
             Health -= damage;
+            if (Health <= 0)
+            {
+                IsAlive = false;
+            }
         }
 
         /// <summary>
@@ -52,6 +56,14 @@ namespace Assignment5
         public void RestoreHealth(int amount)
         {
             Health += amount;
+            if (Health > 0)
+            {
+                IsAlive = true;
+            }
+            if (Health > 100)
+            {
+                Health = 100;
+            }
         }
 
         public override string ToString()
