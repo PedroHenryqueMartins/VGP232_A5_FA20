@@ -45,6 +45,7 @@ namespace Assignment5
             Health -= damage;
             if (Health <= 0)
             {
+                Health = 0;
                 IsAlive = false;
             }
         }
@@ -56,13 +57,13 @@ namespace Assignment5
         public void RestoreHealth(int amount)
         {
             Health += amount;
+            if (Health > MaxHealth)
+            {
+                Health = MaxHealth;
+            }
             if (Health > 0)
             {
                 IsAlive = true;
-            }
-            if (Health > 100)
-            {
-                Health = 100;
             }
         }
 
